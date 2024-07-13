@@ -54,7 +54,8 @@
   }
 
   input::placeholder {
-    color: #ffffff;
+    color: $color1;
+    font-size: 1.3rem;
   }
 }
 
@@ -64,17 +65,17 @@
   min-width: 200px;
 
   border-radius: 10px;
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 5px 10px;
-  font-size: 1rem;
+  font-size: 1.3rem;
 
   text-align: center;
   transition: 0.3s ease-in-out;
   transform-origin: left; 
   padding: 10px;
 
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
+  background: transparent;
+  color: $color1;
 }
 
 .search:focus {
