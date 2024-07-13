@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
-
+import axios from "axios";
+import { NavLink } from "react-router-dom";
+import Header from "./Header";
 const Recipe = () => {
   const [recipes, setRecipes] = useState([]);
 
@@ -13,15 +14,11 @@ const Recipe = () => {
   }, []);
 
   return (
-    <div className="recipe-container">
-      <div className="search-container">
-        <input
-          type="text"
-          id="search"
-          placeholder="Search for a recipe"
-        />
+    <div>
+      <Header />
+      <div className="recipe-container">
+        <div className="recipe"></div>
       </div>
-      <div className="recipe"></div>
     </div>
   );
 };

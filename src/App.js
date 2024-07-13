@@ -1,14 +1,18 @@
 import React from 'react';
-import Header from './pages/Header';
 import Recipe from './pages/Recipe';
-
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Favories from './pages/Favories';
+import Contact from './pages/Contact';
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <Recipe />
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Recipe/>}/>
+      <Route path="/favories" element={<Favories/>}/>
+      <Route path="/contact" element={<Contact/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 };
 
