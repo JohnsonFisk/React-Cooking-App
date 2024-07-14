@@ -6,6 +6,11 @@ const Contact = () => {
     <div>
       <Header />
 
+      <div className="notification-container" id="notification">
+      <div className="notifiction-header"> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="m4 8l2.05 1.64a.48.48 0 0 0 .4.1a.5.5 0 0 0 .34-.24L10 4"/><circle cx="7" cy="7" r="6.5"/></g></svg>&nbsp;&nbsp; Message sent!</div>
+      <div className="notifiction-footer">Thank's for completing the form. We'll be in touch soon!</div>
+    </div>
+
       <div className="form-container">
         <form id="caca">
           <h2>Contact Us</h2>
