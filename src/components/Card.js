@@ -6,8 +6,10 @@ const Card = ({ recipe }) => {
             <h2>{recipe.title}</h2>
             <img src={recipe.image} alt={"Photo" + recipe.title} />
             <div className="info">
-                <p>Temps de cuisson : {recipe.cookingTime} minutes</p>
-                {/* Ajoutez d'autres informations ici */}
+                <h2>{recipe.title}</h2>
+                <p className='diete'>Diete : {recipe.diets}</p>
+                <p className='lunch'>{recipe.dishTypes.join(" - ")}</p>
+                <p className='score'>Avis : {parseInt(recipe.spoonacularScore)}/100</p>
             </div>
         </div>
     );

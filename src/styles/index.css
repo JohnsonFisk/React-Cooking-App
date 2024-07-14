@@ -152,7 +152,7 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 20%;
           flex: 1 0 20%;
-  min-width: 180px;
+  min-width: 300px;
   text-align: center;
   background: rgba(255, 255, 255, 0.97);
   border-radius: 10px;
@@ -174,6 +174,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  font-family: "Lato", sans-serif;
 }
 .recipe-card:hover {
   -webkit-transform: scale(1.05);
@@ -192,7 +193,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.85);
   color: #fff;
   padding: 10px;
   -webkit-box-sizing: border-box;
@@ -201,6 +202,40 @@ body {
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   opacity: 0;
   visibility: hidden;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  padding: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.recipe-card .info h2 {
+  margin-bottom: 10px;
+}
+.recipe-card .info .diete {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 60px;
+  margin-top: 20px;
+}
+.recipe-card .info .lunch {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 100px;
+  margin-top: 20px;
+}
+.recipe-card .info .score {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 15px;
+  margin-top: 20px;
 }
 .recipe-card:hover .info {
   opacity: 1;

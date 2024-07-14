@@ -9,17 +9,20 @@ const Header = () => {
         <div className="nav-container">
           <NavLink
             to="/"
-            className={(nav) => (nav.isActive ? "nav-active" : "")}>
+            className={(nav) => (nav.isActive ? "nav-active" : "")}
+          >
             <li>Acceuil</li>
           </NavLink>
           <NavLink
             to="/favories"
-            className={(nav) => (nav.isActive ? "nav-active" : "")}>
+            className={(nav) => (nav.isActive ? "nav-active" : "")}
+          >
             <li>Mes recettes</li>
           </NavLink>
           <NavLink
             to="/contact"
-            className={(nav) => (nav.isActive ? "nav-active" : "")}>
+            className={(nav) => (nav.isActive ? "nav-active" : "")}
+          >
             <li>Contact us</li>
           </NavLink>
           <span>|</span>
