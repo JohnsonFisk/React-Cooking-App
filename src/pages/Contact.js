@@ -1,15 +1,28 @@
 import React from "react";
 import Header from "./Header";
+import useFormValidation from './useFormValidation.js'; // Assurez-vous d'utiliser le bon chemin
 
 const Contact = () => {
+  useFormValidation();
+
   return (
-    <div>
+    <div className="form">
       <Header />
 
       <div className="notification-container" id="notification">
-      <div className="notifiction-header"> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="m4 8l2.05 1.64a.48.48 0 0 0 .4.1a.5.5 0 0 0 .34-.24L10 4"/><circle cx="7" cy="7" r="6.5"/></g></svg>&nbsp;&nbsp; Message sent!</div>
-      <div className="notifiction-footer">Thank's for completing the form. We'll be in touch soon!</div>
-    </div>
+        <div className="notifiction-header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14">
+            <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 8l2.05 1.64a.48.48 0 0 0 .4.1a.5.5 0 0 0 .34-.24L10 4" />
+              <circle cx="7" cy="7" r="6.5" />
+            </g>
+          </svg>
+          &nbsp;&nbsp; Message sent!
+        </div>
+        <div className="notifiction-footer">
+          Thank's for completing the form. We'll be in touch soon!
+        </div>
+      </div>
 
       <div className="form-container">
         <form id="caca">
@@ -19,14 +32,14 @@ const Contact = () => {
               <div className="name-input">
                 <label htmlFor="firstName">First Name *</label>
                 <input type="text" id="firstName" />
-                <span className="fistNameError">
+                <span className="fistNameError" style={{ color: 'red', visibility: 'hidden' }}>
                   Please enter a valid first name
                 </span>
               </div>
               <div className="name-input">
                 <label htmlFor="lastName">Last Name *</label>
                 <input type="text" id="lastName" />
-                <span className="lastNameError">
+                <span className="lastNameError" style={{ color: 'red', visibility: 'hidden' }}>
                   Please enter a valid last name
                 </span>
               </div>
@@ -35,7 +48,7 @@ const Contact = () => {
               <label htmlFor="email">Email Adress *</label>
               <br />
               <input type="text" id="email" />
-              <span>Please enter a valid email address</span>
+              <span className="emailError" style={{ color: 'red', visibility: 'hidden' }}>Please enter a valid email address</span>
             </div>
             <p className="query">Query Types *</p>
             <div className="query-container">
@@ -62,7 +75,7 @@ const Contact = () => {
                 </label>
               </div>
             </div>
-            <span className="queryError">Please enter a valid last name</span>
+            <span className="queryError" style={{ color: 'red', visibility: 'hidden' }}>Please enter a valid last name</span >
             <p className="message">Message *</p>
             <div className="text-container">
               <textarea name="" id="textArea" minLength="7"></textarea>
