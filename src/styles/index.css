@@ -150,8 +150,8 @@ body {
 
 .recipe-card {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 20%;
-          flex: 1 0 20%;
+      -ms-flex: 1 0 15%;
+          flex: 1 0 15%;
   min-width: 300px;
   text-align: center;
   background: rgba(255, 255, 255, 0.97);
@@ -186,6 +186,7 @@ body {
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 10px;
 }
 .recipe-card .info {
   position: absolute;
@@ -218,7 +219,7 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 60px;
+  top: 280px;
   margin-top: 20px;
 }
 .recipe-card .info .lunch {
@@ -226,8 +227,11 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 100px;
+  top: 200px;
   margin-top: 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  width: 90%;
 }
 .recipe-card .info .score {
   position: absolute;

@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import useFormValidation from './useFormValidation.js'; // Assurez-vous d'utiliser le bon chemin
+import useFormValidation from './useFormValidation.js';
 
 const Contact = () => {
   useFormValidation();
