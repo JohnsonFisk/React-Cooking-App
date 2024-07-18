@@ -12,27 +12,32 @@ body {
   background-size: cover;
 }
 
-.header-container h1 {
-  margin-top: 20px;
+.header-container {
+  display: grid;
+  grid-template-columns: 30% 60%;
+  padding: 25px 15px;
+  background: rgba(255, 255, 255, 0.8);
+  height: 12dvh;
   text-align: center;
+}
+.header-container h1 {
   font-family: "Playfair Display", serif;
   color: rgba(0, 0, 0, 0.687);
-  font-size: 6rem;
+  font-size: 2.8rem;
 }
 
 .nav-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 20px;
-  gap: 30px;
-  font-size: 1.5rem;
+  margin-top: 10px;
+  gap: 35px;
+  font-size: 1.3rem;
 }
 .nav-container a {
   text-decoration: none;
@@ -89,28 +94,41 @@ body {
 }
 
 .search {
-  width: 20%;
+  width: 450px;
   height: 35px;
   min-width: 200px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 2px solid black;
   padding: 5px 10px;
   font-size: 1.3rem;
   text-align: center;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  -webkit-transform-origin: left;
-          transform-origin: left;
   padding: 10px;
   background: transparent;
   color: rgba(0, 0, 0, 0.687);
 }
 
 .search:focus {
-  width: 23%;
+  width: 500px;
   outline: none;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.search-container button {
+  position: relative;
+  right: 37px;
+  top: 8px;
+  border-radius: 10px;
+  border-left: 2px solid black;
+}
+
+.search-button {
+  position: absolute;
+  background: transparent;
+  border: 0px;
+  cursor: pointer;
 }
 
 @-webkit-keyframes slideIn {
@@ -142,7 +160,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 30px;
+  gap: 15px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   padding: 35px;
@@ -150,11 +168,10 @@ body {
 
 .recipe-card {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 15%;
-          flex: 1 0 15%;
+      -ms-flex: 1 0 23%;
+          flex: 1 0 23%;
   min-width: 300px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.97);
   border-radius: 10px;
   padding: 10px;
   position: relative;
@@ -180,10 +197,18 @@ body {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
+.recipe-card:hover .title {
+  visibility: hidden;
+}
+.recipe-card h2 {
+  min-height: 60px;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
 .recipe-card img {
-  margin-top: 20px;
-  width: 300px;
-  height: 300px;
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
@@ -196,7 +221,6 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.85);
   color: #fff;
-  padding: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -205,7 +229,6 @@ body {
   visibility: hidden;
   font-family: "Lato", sans-serif;
   font-size: 1rem;
-  padding: 10px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -213,6 +236,7 @@ body {
 }
 .recipe-card .info h2 {
   margin-bottom: 10px;
+  font-size: 1.3rem;
 }
 .recipe-card .info .diete {
   position: absolute;
@@ -244,6 +268,10 @@ body {
 .recipe-card:hover .info {
   opacity: 1;
   visibility: visible;
+}
+
+.title {
+  font-size: 1.3rem;
 }
 
 .form-container {
