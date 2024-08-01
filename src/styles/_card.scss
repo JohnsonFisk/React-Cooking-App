@@ -1,16 +1,3 @@
-.recipe-container {
-  width: 95%;
-  margin: 0 auto;
-  margin-top: 45px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-  padding: 35px;
-}
-
 .recipe-card {
   flex: 1 0 23%;
   min-width: 300px;
@@ -25,18 +12,22 @@
   align-items: center;
   cursor: pointer;
   font-family: $font2;
+  transition: 0.3s ease-in-out;
 
   &:hover {
     transform: scale(1.05);
 
-    .title {
-      visibility: hidden;
+    .info {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    img {
+      filter: blur(2px);
     }
   }
 
-  h2 {
-    min-height: 60px;
-    margin-bottom: 20px; 
+  h2, .title {
     font-size: 1.3rem;
   }
 
@@ -45,64 +36,82 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: inherit;
   }
 
   .info {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    color: #fff;
-    box-sizing: border-box;
+    width: 350px;
+    height: 220px;
+    min-width: 250px;
+    max-width: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $lowBlack;
+    color: $white;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     opacity: 0;
     visibility: hidden;
     font-family: $font2;
     font-size: 1rem;
     user-select: none;
+    border-radius: 10px;
+
+    .coeur {
+      position: absolute;
+      top: 0px;
+      right: 2px;
+      text-align: end;
+      z-index: 2;
+      padding: 3px;
+
+      span {
+        cursor: pointer;
+        color: white;
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+
+      span:hover {
+        transform: scale(1.1);
+        color: red;
+      }
+    }
 
     h2 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
+      padding-top: 15px;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .diete, .lunch, .score {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .diete {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 280px;
-      margin-top: 20px;
+      top: 10px;
     }
 
     .lunch {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 200px;
-      margin-top: 20px;
-      font-size: 1rem;
+      top: 50%;
+      transform: translate(-50%, -50%);
       text-transform: uppercase;
-      width: 90%;
     }
 
     .score {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 15px;
-      margin-top: 20px;
+      bottom: 10px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+
+      span {
+        display: flex;
+        align-items: center;
+      }
     }
   }
-
-  &:hover .info {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.title {
-  font-size: 1.3rem;
 }

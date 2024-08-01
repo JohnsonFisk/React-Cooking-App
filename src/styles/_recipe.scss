@@ -1,0 +1,38 @@
+.recipe-container {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 35px;
+  }
+
+.sort-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    color: white;
+    width: 96%;
+    height: auto;
+
+    li {
+        border: 1px solid white;
+        border-radius: 8px;
+        padding: 5px 25px;
+        cursor: pointer;
+        font-family: $font1;
+        font-size: 1.4rem;
+        transition: 0.3s ease-in-out;
+    }
+
+    li:hover {
+        background: white;
+        color: $black;
+    }
+}

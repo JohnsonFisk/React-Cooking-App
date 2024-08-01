@@ -18,6 +18,15 @@ const Recipe = () => {
     <div>
       <Header />
       <div className="recipe-container">
+        <div className="sort-container">
+          <li>Lunch</li>
+          <li>Dish</li>
+          <li>Dinner</li>
+          <li>Desserts</li>
+          <li>Snack</li>
+          <li>Beverage</li>
+          <li>Bangers</li>
+        </div>
         {recipes.map((recipe) => (
           <div className="recipe-card" key={recipe.id}>
             <Card recipe={recipe} />
