@@ -1,10 +1,8 @@
 import React from 'react';
 
 const Card = ({ recipe }) => {
-    // Limiter à 3 éléments
     const limitedDishTypes = recipe.dishTypes.slice(0, 3);
     const scoreOutOfTen = (parseInt(recipe.spoonacularScore) / 10).toFixed(1);
-
 
     return (
         <div className="recipe-card">
@@ -24,7 +22,6 @@ const Card = ({ recipe }) => {
         </span>
     </p>
 </div>
-
         </div>
     );
 };
