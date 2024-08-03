@@ -1,154 +1,107 @@
-:root {
-    --color-black: #0f0f0f;
-    --color-white: #ffffff;
-}
-
-.container {
-    display: block;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 600;
-}
-
-img {
-    max-width: 100%;
-}
-
-button {
-    background: none;
-    cursor: pointer;
-    font-size: 0.875rem;
-    letter-spacing: 0.05rem;
-}
-
-img {
-    border-radius: 4px;
-}
-
 .carousel {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    overflow: hidden;
-    position: relative;
+  padding: 30px;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.carousel__nav {
-    display: flex;
-    justify-content: flex-end;
-    grid-column: 1 / -1;
-    padding: 1.5rem;
+.carousel__container {
+  padding-bottom: 10px;
+  width: 100%;
+  white-space: nowrap;
 }
 
-.carousel__nav button {
-    color: var(--color-black);
-    display: flex;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 32px;
-    border: 1px solid var(--color-black);
+.carousel--item {
+  display: inline-block;
+  position: relative;
+  margin: 10px 8px;
+  width: 250px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 350ms all;
+  transform-origin: center left;
 }
 
-.carousel__nav button:hover {
-    color: var(--color-white);
-    background-color: var(--color-black);
+.carousel--item:hover ~ .carousel--item {
+  transform: translate3d(100px, 0, 0);
+}
+.carousel__container:hover .carousel--item {
+  opacity: 0.3;
 }
 
-.carousel__nav button:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
+.carousel__container:hover .carousel--item:hover {
+  transform: scale(1.2, 1.2);
+  opacity: 1;
 }
 
-.carousel__nav button:disabled:hover {
-    color: var(--color-black);
-    background-color: transparent;
+.carousel--item:hover .carousel--item__details {
+  opacity: 1;
 }
 
-.carousel__track {
-    display: flex;
-    transition: transform 400ms linear;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.carousel--item__img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+.carousel--item__details {
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  background: linear-gradient(
+    83deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.3) 75%,
+    rgba(254, 172, 147, 0.1) 100%
+  );
+  opacity: 0;
+  transition: 350ms opacity;
+}
+.carousel--item__details img {
+  margin: 0 5px;
+  width: 20px;
 }
 
-.carousel__track-container {
-    grid-column: 1 / -1;
-    overflow: hidden;
+.carousel--item__details--title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    color: $white;
+    font-family: $font1;
+}
+.carousel--item__details--subtitle {
+    font-size: 0.8rem;
+    text-align: center;
+    color: $white;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.carousel__slide {
-    min-width: 100%;
-    box-sizing: border-box;
-    outline: none;
-    padding: 0.5rem 0;
-}
-
-.carousel__slide-image {
-    width: 60%;
-    display: block;
-}
-
-.carousel__slide-caption {
-    text-align: left;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-}
-
-.carousel__slide-content {
-    opacity: 0;
-    margin-top: 4rem;
-    transition: opacity 250ms linear;
-}
-
-.carousel__slide-content h2 {
-    margin: 0.5rem 0;
-    font-size: 1.5rem;
-}
-
-.carousel__slide-content p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-.carousel__slide-content button {
+.discovered {
     padding: 0.75rem 1.25rem;
     cursor: pointer;
     border-radius: 8px;
-    border: 2px solid var(--color-black);
+    border: 1px solid $lowBlack;
     transition: background-color 250ms linear;
-}
-
-.carousel__slide-content button:hover,
-.carousel__slide-content button:focus-visible {
-    color: var(--color-white);
-    background-color: var(--color-black);
-}
-
-@media (min-width: 768px) {
-    .carousel {
-        grid-template-columns: repeat(12, 1fr);
-        grid-column: 2 / span 11;
+    font-size: 1rem;
+  
+    &:hover,
+    &:focus-visible {
+      color: $white;
+      background-color: $black;
     }
-
-    .carousel__track {
-        width: calc(100% + (100% / 12));
-        margin-left: calc(100% / 12);
-    }
-
-    .carousel__slide {
-        min-width: calc((100% / 2.75) - (16px / 2.75)); /* Réduction de l'écart sur les écrans plus grands */
-    }
-}
+  }

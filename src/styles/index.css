@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 * {
   margin: 0;
@@ -23,7 +22,7 @@ body {
 }
 .header-container h1 {
   font-family: "Playfair Display", serif;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.687);
   font-size: 2.8rem;
 }
 
@@ -592,177 +591,125 @@ textarea:invalid {
     margin-top: 20px;
   }
 }
-:root {
-  --color-black: #0f0f0f;
-  --color-white: #ffffff;
-}
-
-.container {
-  display: block;
-  height: 100vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-}
-
-img {
-  max-width: 100%;
-}
-
-button {
-  background: none;
-  cursor: pointer;
-  font-size: 0.875rem;
-  letter-spacing: 0.05rem;
-}
-
-img {
-  border-radius: 4px;
-}
-
 .carousel {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  overflow: hidden;
+  padding: 30px;
   position: relative;
+  overflow-x: hidden;
 }
 
-.carousel__nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  grid-column: 1/-1;
-  padding: 1.5rem;
+.carousel__container {
+  padding-bottom: 10px;
+  width: 100%;
+  white-space: nowrap;
 }
 
-.carousel__nav button {
-  color: var(--color-black);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 32px;
-  border: 1px solid var(--color-black);
-}
-
-.carousel__nav button:hover {
-  color: var(--color-white);
-  background-color: var(--color-black);
-}
-
-.carousel__nav button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.carousel__nav button:disabled:hover {
-  color: var(--color-black);
-  background-color: transparent;
-}
-
-.carousel__track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition: -webkit-transform 400ms linear;
-  transition: -webkit-transform 400ms linear;
-  transition: transform 400ms linear;
-  transition: transform 400ms linear, -webkit-transform 400ms linear;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.carousel__track-container {
-  grid-column: 1/-1;
+.carousel--item {
+  display: inline-block;
+  position: relative;
+  margin: 10px 8px;
+  width: 250px;
+  height: 200px;
+  border-radius: 20px;
   overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: 350ms all;
+  transition: 350ms all;
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
 }
 
-.carousel__slide {
-  min-width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  outline: none;
-  padding: 0.5rem 0;
+.carousel--item:hover ~ .carousel--item {
+  -webkit-transform: translate3d(100px, 0, 0);
+          transform: translate3d(100px, 0, 0);
 }
 
-.carousel__slide-image {
-  width: 60%;
-  display: block;
+.carousel__container:hover .carousel--item {
+  opacity: 0.3;
 }
 
-.carousel__slide-caption {
-  text-align: left;
-  font-size: 1rem;
-  margin-top: 0.5rem;
+.carousel__container:hover .carousel--item:hover {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  opacity: 1;
 }
 
-.carousel__slide-content {
+.carousel--item:hover .carousel--item__details {
+  opacity: 1;
+}
+
+.carousel--item__img {
+  width: 300px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.carousel--item__details {
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  background: linear-gradient(83deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.3) 75%, rgba(254, 172, 147, 0.1) 100%);
   opacity: 0;
-  margin-top: 4rem;
-  -webkit-transition: opacity 250ms linear;
-  transition: opacity 250ms linear;
+  -webkit-transition: 350ms opacity;
+  transition: 350ms opacity;
 }
 
-.carousel__slide-content h2 {
-  margin: 0.5rem 0;
-  font-size: 1.5rem;
+.carousel--item__details img {
+  margin: 0 5px;
+  width: 20px;
 }
 
-.carousel__slide-content p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  margin-bottom: 1rem;
+.carousel--item__details--title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: "Playfair Display", serif;
 }
 
-.carousel__slide-content button {
+.carousel--item__details--subtitle {
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.discovered {
   padding: 0.75rem 1.25rem;
   cursor: pointer;
   border-radius: 8px;
-  border: 2px solid var(--color-black);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   -webkit-transition: background-color 250ms linear;
   transition: background-color 250ms linear;
+  font-size: 1rem;
 }
-
-.carousel__slide-content button:hover,
-.carousel__slide-content button:focus-visible {
-  color: var(--color-white);
-  background-color: var(--color-black);
-}
-
-@media (min-width: 768px) {
-  .carousel {
-    grid-template-columns: repeat(12, 1fr);
-    grid-column: 2/span 11;
-  }
-  .carousel__track {
-    width: 108.3333333333%;
-    margin-left: 8.3333333333%;
-  }
-  .carousel__slide {
-    min-width: calc(36.3636363636% - 5.8181818182px); /* Réduction de l'écart sur les écrans plus grands */
-  }
+.discovered:hover, .discovered:focus-visible {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.687);
 }/*# sourceMappingURL=index.css.map */
