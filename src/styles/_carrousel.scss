@@ -14,8 +14,8 @@
   display: inline-block;
   position: relative;
   margin: 10px 8px;
-  width: 250px;
-  height: 200px;
+  width: 350px;
+  height: 250px;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
@@ -40,8 +40,8 @@
 }
 
 .carousel--item__img {
-  width: 300px;
-  height: 200px;
+  width: 350px;
+  height: 250px;
   object-fit: cover;
 }
 .carousel--item__details {
@@ -55,8 +55,6 @@
   background: linear-gradient(
     83deg,
     rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.6) 50%,
-    rgba(0, 0, 0, 0.3) 75%,
     rgba(254, 172, 147, 0.1) 100%
   );
   opacity: 0;
@@ -73,11 +71,21 @@
     text-align: center;
     color: $white;
     font-family: $font1;
+    background: black;
 }
 .carousel--item__details--subtitle {
     font-size: 0.8rem;
     text-align: center;
     color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span > svg {
+      width: 25px;
+      height: 25px;
+      background: red;
+    }
 }
 @keyframes gradient {
   0% {

@@ -607,8 +607,8 @@ textarea:invalid {
   display: inline-block;
   position: relative;
   margin: 10px 8px;
-  width: 250px;
-  height: 200px;
+  width: 350px;
+  height: 250px;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
@@ -638,8 +638,8 @@ textarea:invalid {
 }
 
 .carousel--item__img {
-  width: 300px;
-  height: 200px;
+  width: 350px;
+  height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -652,7 +652,7 @@ textarea:invalid {
   right: 0;
   bottom: 0;
   font-size: 10px;
-  background: linear-gradient(83deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.3) 75%, rgba(254, 172, 147, 0.1) 100%);
+  background: linear-gradient(83deg, rgba(0, 0, 0, 0.9) 0%, rgba(254, 172, 147, 0.1) 100%);
   opacity: 0;
   -webkit-transition: 350ms opacity;
   transition: 350ms opacity;
@@ -669,12 +669,27 @@ textarea:invalid {
   text-align: center;
   color: rgb(255, 255, 255);
   font-family: "Playfair Display", serif;
+  background: black;
 }
 
 .carousel--item__details--subtitle {
   font-size: 0.8rem;
   text-align: center;
   color: rgb(255, 255, 255);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.carousel--item__details--subtitle span > svg {
+  width: 25px;
+  height: 25px;
+  background: red;
 }
 
 @-webkit-keyframes gradient {
