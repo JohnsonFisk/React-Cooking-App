@@ -148,6 +148,13 @@ body {
     width: 100%;
   }
 }
+.container .category-title {
+  margin-top: 20px;
+  font-size: 3rem;
+  color: rgba(0, 0, 0, 0.687);
+  margin-left: 15px;
+}
+
 .recipe-container {
   width: 95%;
   margin: 0 auto;
@@ -195,6 +202,10 @@ body {
 .sort-container li:hover {
   background: white;
   color: rgba(0, 0, 0, 0.687);
+}
+
+.container h1 {
+  font-style: 3rem;
 }
 
 .recipe-card {
@@ -601,13 +612,14 @@ textarea:invalid {
   padding-bottom: 10px;
   width: 100%;
   white-space: nowrap;
+  margin: 20px;
 }
 
 .carousel--item {
   display: inline-block;
   position: relative;
   margin: 10px 8px;
-  width: 350px;
+  width: 340px;
   height: 250px;
   border-radius: 20px;
   overflow: hidden;
@@ -638,7 +650,7 @@ textarea:invalid {
 }
 
 .carousel--item__img {
-  width: 350px;
+  width: 340px;
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -673,8 +685,7 @@ textarea:invalid {
 }
 
 .carousel--item__details--subtitle {
-  font-size: 0.8rem;
-  text-align: center;
+  font-size: 1.1rem;
   color: rgb(255, 255, 255);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -685,11 +696,36 @@ textarea:invalid {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 5px;
 }
+
 .carousel--item__details--subtitle span > svg {
-  width: 25px;
-  height: 25px;
-  background: red;
+  margin-right: 5px;
+}
+
+.see-recipe-container {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+.see-recipe-container button {
+  background: black;
+  color: white;
+  border-radius: 25px;
+  padding: 5px 15px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  border: none;
+}
+.see-recipe-container button:hover {
+  background: rgb(255, 255, 255);
+  color: black;
 }
 
 @-webkit-keyframes gradient {
@@ -715,6 +751,18 @@ textarea:invalid {
     background-position: 0% 50%;
   }
 }
+.discovered-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .discovered {
   padding: 0.75rem 1.25rem;
   cursor: pointer;
