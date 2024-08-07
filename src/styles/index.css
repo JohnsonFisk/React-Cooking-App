@@ -148,13 +148,6 @@ body {
     width: 100%;
   }
 }
-.container .category-title {
-  margin-top: 20px;
-  font-size: 3rem;
-  color: #455A64;
-  margin-left: 15px;
-}
-
 .recipe-container {
   width: 95%;
   margin: 0 auto;
@@ -780,7 +773,6 @@ textarea:invalid {
 
 .homepage {
   margin: 0 auto;
-  max-width: 1200px;
   padding: 20px;
   text-align: center;
 }
@@ -789,8 +781,9 @@ textarea:invalid {
   background-color: rgba(69, 90, 100, 0.5);
   color: white;
   padding: 50px 20px;
-  margin-bottom: 40px;
   border-radius: 10px;
+  margin: 0 auto;
+  width: 70%;
 }
 
 .hero-section h1 {
@@ -820,10 +813,6 @@ textarea:invalid {
   color: white;
 }
 
-.categories {
-  margin: 40px 0;
-}
-
 .categories h2 {
   font-size: 3.5em;
   margin-bottom: 20px;
@@ -831,12 +820,7 @@ textarea:invalid {
 }
 
 .category-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: block;
   gap: 20px;
 }
 

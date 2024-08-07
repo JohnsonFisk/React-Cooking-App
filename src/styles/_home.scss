@@ -1,6 +1,5 @@
 .homepage {
     margin: 0 auto;
-    max-width: 1200px;
     padding: 20px;
     text-align: center;
   }
@@ -9,8 +8,9 @@
     background-color:$lowBlack;
     color: white;
     padding: 50px 20px;
-    margin-bottom: 40px;
     border-radius: 10px;
+    margin: 0 auto;
+    width: 70%;
   }
   
   .hero-section h1 {
@@ -38,11 +38,6 @@
     background-color: $orange;
     color: white;
   }
-  
-  .categories {
-    margin: 40px 0;
-  }
-  
   .categories h2 {
     font-size: 3.5em;
     margin-bottom: 20px;
@@ -50,8 +45,7 @@
   }
   
   .category-list {
-    display: flex;
-    justify-content: center;
+    display: block;
     gap: 20px;
   }
   
@@ -67,4 +61,3 @@
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
-  

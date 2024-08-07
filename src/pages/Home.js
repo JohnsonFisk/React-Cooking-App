@@ -18,11 +18,10 @@ const Home = () => {
                 <section className="categories">
                     <h2>Explore by category</h2>
                     <div className="category-list">
-                        {/* Add links to categories with images */}
-            <Carousel category="entree" apiKey={apiKey} />
-            <Carousel category="main course" apiKey={apiKey} />
-            <Carousel category="dessert" apiKey={apiKey} />
-            <Carousel category="drink" apiKey={apiKey} />
+                        <Carousel category="entree" apiKey={apiKey} />
+                        <Carousel category="main course" apiKey={apiKey} />
+                        <Carousel category="dessert" apiKey={apiKey} />
+                        <Carousel category="drink" apiKey={apiKey} />
                     </div>
                 </section>
             </div>
