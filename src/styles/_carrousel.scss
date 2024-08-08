@@ -2,6 +2,7 @@
   padding: 30px;
   position: relative;
   overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .carousel__container {
@@ -125,10 +126,17 @@
   }
 }
 
+.category-title {
+  font-size: 2.5rem;
+  padding-top: 10px;
+  color: $white;
+}
+
 .discovered-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 .discovered {

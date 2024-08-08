@@ -11,13 +11,13 @@ const Header = () => {
             to="/"
             className={(nav) => (nav.isActive ? "nav-active" : "")}
           >
-            <li>Acceuil</li>
+            <li>Home</li>
           </NavLink>
           <NavLink
             to="/favories"
             className={(nav) => (nav.isActive ? "nav-active" : "")}
           >
-            <li>Mes recettes</li>
+            <li>Favorite recipe</li>
           </NavLink>
           <NavLink
             to="/contact"
