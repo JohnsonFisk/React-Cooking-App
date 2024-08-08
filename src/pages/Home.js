@@ -2,7 +2,6 @@ import React from "react";
 import Carousel from "./Caroussel";
 import { NavLink } from "react-router-dom";
 import Header from "./Header";
-import Recipe from "./Recipe";
 
 const Home = () => {
   const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
