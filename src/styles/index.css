@@ -201,6 +201,12 @@ body {
   font-style: 3rem;
 }
 
+.sort-container li.active {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
 .recipe-card {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 23%;
