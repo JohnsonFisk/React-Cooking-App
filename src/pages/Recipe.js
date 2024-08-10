@@ -9,6 +9,18 @@ const Recipe = () => {
   const filteredRecipes = selectedCategory
     ? recipes.filter((recipe) => recipe.dishTypes.includes(selectedCategory))
     : recipes;
+    const [page, setPage] = useState(1);
+    const fetchRecipes = (newCategory, newPage) => {
+      const categoryParam = newCategory ? `&tags=${newCategory}` : "";
+      const url = `https://api.spoonacular.com/recipes/random?number=24${categoryParam}&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`;
+      
+      axios.get(url)
+        .then((res) => {
+          setRecipes((prevRecipes) => [...prevRecipes, ...res.data.recipes]); 
+        })
+        .catch((err) => console.error(err));
+    };
+    
 
     useEffect(() => {
       if (selectedCategory) {
@@ -32,19 +44,24 @@ const Recipe = () => {
       <Header />
       <div className="recipe-container">
         <div className="sort-container">
-          <li onClick={() => setSelectedCategory("breakfast")} className={selectedCategory === "breakfast" ? "active" : ""}>Breakfast</li>
-          <li onClick={() => setSelectedCategory("lunch")} className={selectedCategory === "lunch" ? "active" : ""}>Lunch</li>
-          <li onClick={() => setSelectedCategory("dinner")} className={selectedCategory === "dinner" ? "active" : ""}>Dinner</li>
-          <li onClick={() => setSelectedCategory("desserts")} className={selectedCategory === "desserts" ? "active" : ""}>Desserts</li>
-          <li onClick={() => setSelectedCategory("fingerfood")} className={selectedCategory === "fingerfood" ? "active" : ""}>Fingerfood</li>
-          <li onClick={() => setSelectedCategory("snack")} className={selectedCategory === "snack" ? "active" : ""}>Snack</li>
-          <li onClick={() => setSelectedCategory("beverage")} className={selectedCategory === "beverage" ? "active" : ""}>Beverage</li>
+          <li onClick={() => setSelectedCategory(selectedCategory === "breakfast" ? "" : "breakfast")}className={selectedCategory === "breakfast" ? "active" : ""}>Breakfast</li>
+          <li onClick={() => setSelectedCategory(selectedCategory === "lunch" ? "" : "lunch")} className={selectedCategory === "lunch" ? "active" : ""}>Lunch</li>
+          <li onClick={() => setSelectedCategory(selectedCategory === "dinner" ? "" : "dinner")} className={selectedCategory === "dinner" ? "active" : ""}>Dinner</li>
+          <li onClick={() => setSelectedCategory(selectedCategory === "dessert" ? "" : "dessert")} className={selectedCategory === "dessert" ? "active" : ""}>Desserts</li>
+          <li onClick={() => setSelectedCategory(selectedCategory === "fingerfood"?"":"fingerfood")}className={selectedCategory === "fingerfood" ? "active" : ""}>Fingerfood</li>
+          <li onClick={() => setSelectedCategory(selectedCategory === "snack" ? "" : "snack")}className={selectedCategory === "snack" ? "active" : ""}>Snack</li>
+          <li onClick={() => setSelectedCategory(selectedCategory === "beverage" ? "" : "beverage")} className={selectedCategory === "beverage" ? "active" : ""}>Beverage</li>
         </div>
         {filteredRecipes.map((recipe) => (
           <div className="recipe-card" key={recipe.id}>
             <Card recipe={recipe} />
           </div>
         ))}
+        <div className="more-container">
+        <button id="more" onClick={() => {
+            setPage(prevPage => prevPage + 1);
+            fetchRecipes(selectedCategory, page + 1);}}>See more</button>
+        </div>
       </div>
     </div>
   );

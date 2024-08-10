@@ -207,6 +207,34 @@ body {
   font-weight: bold;
 }
 
+.more-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  margin: 20px;
+}
+.more-container button {
+  background-color: rgba(69, 90, 100, 0.5);
+  color: #FFF3E0;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+}
+.more-container button:hover {
+  background-color: #FF7043;
+  color: white;
+}
+
 .recipe-card {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 23%;
