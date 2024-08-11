@@ -49,7 +49,7 @@ const Recipe = () => {
           <li onClick={() => setSelectedCategory(selectedCategory === "dinner" ? "" : "dinner")} className={selectedCategory === "dinner" ? "active" : ""}>Dinner</li>
           <li onClick={() => setSelectedCategory(selectedCategory === "dessert" ? "" : "dessert")} className={selectedCategory === "dessert" ? "active" : ""}>Desserts</li>
           <li onClick={() => setSelectedCategory(selectedCategory === "fingerfood"?"":"fingerfood")}className={selectedCategory === "fingerfood" ? "active" : ""}>Fingerfood</li>
-          <li onClick={() => setSelectedCategory(selectedCategory === "snack" ? "" : "snack")}className={selectedCategory === "snack" ? "active" : ""}>Snack</li>
+          <li onClick={() => setSelectedCategory(selectedCategory === "snack" ? "" : "snack")} className={selectedCategory === "snack" ? "active" : ""}>Snack</li>
           <li onClick={() => setSelectedCategory(selectedCategory === "beverage" ? "" : "beverage")} className={selectedCategory === "beverage" ? "active" : ""}>Beverage</li>
         </div>
         {filteredRecipes.map((recipe) => (
