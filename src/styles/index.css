@@ -902,4 +902,34 @@ textarea:invalid {
           transform: scale(1.05);
   -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.favorites-container {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 35px;
+}
+.favorites-container img {
+  max-width: 400px;
+}
+
+.fav-title {
+  background-color: rgba(69, 90, 100, 0.6);
+  color: white;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 50%;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 20px;
 }/*# sourceMappingURL=index.css.map */
