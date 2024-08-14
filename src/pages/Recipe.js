@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
 import Header from "./Header";
 import Card from "../components/Card";
 const Recipe = () => {
