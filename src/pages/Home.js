@@ -23,7 +23,7 @@ const Home = () => {
             <Carousel category="breakfast" apiKey={apiKey} />
             <Carousel category="lunch" apiKey={apiKey} />
             <Carousel category="dessert" apiKey={apiKey} />
-            <Carousel category="drink" apiKey={apiKey} />
+            <Carousel category="beverage" apiKey={apiKey} />
           </div>
         </section>
       </div>

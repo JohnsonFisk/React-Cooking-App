@@ -24,6 +24,7 @@ body {
   font-family: "Playfair Display", serif;
   color: #455A64;
   font-size: 2.8rem;
+  cursor: pointer;
 }
 
 .nav-container {

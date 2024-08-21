@@ -38,10 +38,6 @@ const Recipe = () => {
       <Header />
       <div className="recipe-container">
         <div className="sort-container">
-          {/* <li onClick={() => setSelectedCategory("breakfast")} className={selectedCategory === "breakfast" ? "active" : ""}>Breakfast</li>
-          <li onClick={() => setSelectedCategory("lunch")} className={selectedCategory === "lunch" ? "active" : ""}>Lunch</li>
-          <li onClick={() => setSelectedCategory("dinner")} className={selectedCategory === "dinner" ? "active" : ""}>Dinner</li>
-          <li onClick={() => setSelectedCategory("dessert")} className={selectedCategory === "dessert" ? "active" : ""}>Desserts</li> */}
           <li onClick={() => setSelectedCategory(selectedCategory === "breakfast" ? "" : "breakfast")}className={selectedCategory === "breakfast" ? "active" : ""}>Breakfast</li>
           <li onClick={() => setSelectedCategory(selectedCategory === "lunch" ? "" : "lunch")} className={selectedCategory === "lunch" ? "active" : ""}>Lunch</li>
           <li onClick={() => setSelectedCategory(selectedCategory === "dinner" ? "" : "dinner")} className={selectedCategory === "dinner" ? "active" : ""}>Dinner</li>
