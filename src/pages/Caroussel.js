@@ -54,7 +54,7 @@ const Carousel = ({ category, apiKey }) => {
             </div>
             <div className="discovered-container">
                 <button className="discovered" onClick={handleDiscoverClick}>
-                    Découvrez nos {capitalizedCategory}
+                    Discover our {capitalizedCategory}
                 </button>
             </div>
         </div>

@@ -3,6 +3,8 @@ import React from 'react';
 const Card = ({ recipe, isFavorite, onRemove }) => {
     const limitedDishTypes = recipe.dishTypes.slice(0, 3);
     const scoreOutOfTen = (parseInt(recipe.spoonacularScore) / 10).toFixed(1);
+    const defaultImage =  '/assets/images/food-api.jpg';
+
 
     const handleFavClick = () => {
         if (isFavorite && onRemove) {
@@ -18,8 +20,8 @@ const Card = ({ recipe, isFavorite, onRemove }) => {
 
     return (
         <div className="recipe-card">
-            <img src={recipe.image} alt={"Photo " + recipe.title} />
-            <div className="info">
+            <img src={recipe.image ? recipe.image : defaultImage} alt={recipe.title} />
+                <div className="info">
                 <div className="coeur">
                     <span>
                         <svg

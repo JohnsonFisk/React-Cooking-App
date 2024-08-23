@@ -10,6 +10,7 @@ const Recipe = () => {
   const [page, setPage] = useState(1);
   const location = useLocation();
 
+
   useEffect(() => {
     if (location.state?.selectedCategory) {
       setSelectedCategory(location.state.selectedCategory);
