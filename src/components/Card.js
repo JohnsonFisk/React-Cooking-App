@@ -1,10 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Card = ({ recipe, isFavorite, onRemove }) => {
     const limitedDishTypes = recipe.dishTypes.slice(0, 3);
     const scoreOutOfTen = (parseInt(recipe.spoonacularScore) / 10).toFixed(1);
-    const defaultImage =  '/assets/images/food-api.jpg';
-
+    const defaultImage = '/assets/images/food-api.jpg';
+    const navigate = useNavigate();
 
     const handleFavClick = () => {
         if (isFavorite && onRemove) {
@@ -18,10 +19,14 @@ const Card = ({ recipe, isFavorite, onRemove }) => {
         }
     };
 
+    const handleSeeRecipe = () => {
+        navigate(`/recipe/${recipe.id}`);
+    };
+
     return (
         <div className="recipe-card">
             <img src={recipe.image ? recipe.image : defaultImage} alt={recipe.title} />
-                <div className="info">
+            <div className="info">
                 <div className="coeur">
                     <span>
                         <svg
@@ -42,7 +47,7 @@ const Card = ({ recipe, isFavorite, onRemove }) => {
                 </div>
                 <h2>{recipe.title}</h2>
                 <div className="see-recipe-container">
-                    <button>See recipe</button>
+                    <button onClick={handleSeeRecipe}>See recipe</button>
                 </div>
                 <div className="footer-card-container">
                     <p className='score'>

@@ -64,16 +64,18 @@
 }
 
 .discovered {
+  background: #73a23de6;
+  color: $white;
   padding: 0.75rem 1.25rem;
   cursor: pointer;
+  border: none;
   border-radius: 8px;
-  border: 1px solid #333;
   transition: background-color 250ms linear;
-  font-size: 1rem;
+  font-size: 1.3rem;
 
   &:hover,
   &:focus-visible {
     color: white;
-    background-color: black;
+    background-color: $primary;
   }
 }
