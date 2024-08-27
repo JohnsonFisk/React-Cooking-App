@@ -7,12 +7,24 @@ const RecipeDetails = () => {
     const { id } = useParams();
     const [recipe, setRecipe] = useState(null);
 
+    // Fonction pour récupérer les détails de la recette, avec mise en cache
     const fetchRecipeDetails = useCallback(async () => {
+        // Vérifier si les détails de la recette sont déjà dans le cache
+        const cachedRecipe = localStorage.getItem(`recipe-${id}`);
+        if (cachedRecipe) {
+            setRecipe(JSON.parse(cachedRecipe));
+            return;
+        }
+
+        // Si pas dans le cache, faire une requête API pour les obtenir
         try {
             const response = await axios.get(
                 `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`
             );
             setRecipe(response.data);
+
+            // Stocker les détails de la recette dans le cache
+            localStorage.setItem(`recipe-${id}`, JSON.stringify(response.data));
         } catch (error) {
             console.error("Erreur lors de la récupération des détails de la recette :", error);
         }
@@ -28,7 +40,7 @@ const RecipeDetails = () => {
 
     return (
         <div>
-            <Header/>
+            <Header />
             <div className="recipe-details">
                 <div className="recipe-header">
                     <div className="recipe-image">
