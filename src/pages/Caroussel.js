@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 
@@ -26,17 +26,17 @@ const Carousel = ({ category, apiKey }) => {
         fetchData();
     }, [category, apiKey]);
 
-    const scrollLeft = () => {
+    const scrollLeft = useCallback(() => {
         carouselRef.current.scrollBy({ left: -800, behavior: 'smooth' }); 
-    };
+    }, []);
 
-    const scrollRight = () => {
+    const scrollRight = useCallback(() => {
         carouselRef.current.scrollBy({ left: 800, behavior: 'smooth' });
-    };
+    }, []);
 
-    const handleDiscoverClick = () => {
+    const handleDiscoverClick = useCallback(() => {
         navigate('/recipe', { state: { selectedCategory: category } });
-    };
+    }, [navigate, category]);
 
     const capitalizedCategory = category ? category.charAt(0).toUpperCase() + category.slice(1) : '';
 

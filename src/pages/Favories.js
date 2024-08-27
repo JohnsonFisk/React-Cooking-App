@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Header from './Header';
 import Card from '../components/Card';
 
@@ -10,11 +10,11 @@ const Favories = () => {
         setFavorites(storedFavorites);
     }, []);
 
-    const removeFav = (recipeToRemove) => {
+    const removeFav = useCallback((recipeToRemove) => {
         const updatedFavorites = favorites.filter(recipe => recipe.id !== recipeToRemove.id);
         localStorage.setItem('favRecipe', JSON.stringify(updatedFavorites));
         setFavorites(updatedFavorites);
-    }
+    }, [favorites]);
 
     return (
         <div>
@@ -22,9 +22,9 @@ const Favories = () => {
             <h1 className='fav-title'>Find your favorite recipes here :</h1>
             <div className="favorites-container">
                 {favorites.length > 0 ? (
-                    favorites.map((recipe, index) => (
+                    favorites.map((recipe) => (
                         <Card
-                            key={index}
+                            key={recipe.id}
                             recipe={recipe}
                             isFavorite={true}
                             onRemove={removeFav}

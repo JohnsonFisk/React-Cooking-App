@@ -25,8 +25,8 @@ body {
           align-items: center;
   padding: 15px 30px;
   background-color: rgba(249, 249, 249, 0.8);
-  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 4px 12px rgba(28, 28, 28, 0.8);
+          box-shadow: 0 4px 12px rgba(28, 28, 28, 0.8);
   border-bottom: 2px solid #dddddd;
 }
 
@@ -48,7 +48,7 @@ body {
 }
 .leftPart a {
   text-decoration: none;
-  color: #455A64;
+  color: rgba(69, 90, 100, 0.8078431373);
 }
 .leftPart:hover a {
   cursor: pointer;
@@ -73,9 +73,9 @@ body {
 }
 .nav-container a {
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 20px;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #555;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
@@ -104,19 +104,38 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  color: rgba(255, 255, 255, 0.8);
 }
 .search-container .search {
+  width: 280px;
   padding: 8px 15px;
   border-radius: 20px;
-  border: 1px solid #dddddd;
+  border: 1px solid rgba(69, 90, 100, 0.8078431373);
   font-size: 1rem;
   font-family: "Helvetica Neue", Arial, sans-serif;
   -webkit-transition: border 0.3s ease;
   transition: border 0.3s ease;
+  background-color: rgba(69, 90, 100, 0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 .search-container .search:focus {
   outline: none;
-  border-color: #8BC34A;
+  border-color: #FF7043;
+}
+.search-container .search::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+.search-container .search::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+.search-container .search:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+.search-container .search::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+.search-container .search::placeholder {
+  color: rgba(255, 255, 255, 0.8);
 }
 .search-container .search-button {
   position: absolute;
@@ -129,7 +148,7 @@ body {
   transition: color 0.3s ease;
 }
 .search-container .search-button svg {
-  fill: currentColor;
+  color: rgba(255, 255, 255, 0.8);
 }
 .search-container .search-button:hover {
   color: #ff7043;
@@ -194,7 +213,7 @@ body {
 }
 .sort-container li:hover {
   background: white;
-  color: #455A64;
+  color: rgba(69, 90, 100, 0.8078431373);
 }
 
 .container h1 {
@@ -419,7 +438,7 @@ body {
           transform: translateX(-50%);
   width: 650px;
   height: 670px;
-  background: #455A64;
+  background: rgba(69, 90, 100, 0.8078431373);
   border-radius: 15px;
   padding: 5px 35px;
   margin-top: 30px;
@@ -816,7 +835,7 @@ textarea:invalid {
 
 .categories h2 {
   font-size: 3.5em;
-  color: #455A64;
+  color: rgba(69, 90, 100, 0.8078431373);
 }
 
 .category-list {
