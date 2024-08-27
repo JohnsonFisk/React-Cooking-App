@@ -1,116 +1,114 @@
 .header-container {
-  display: grid;
-  grid-template-columns: 30% 60%;
-  padding: 25px 15px;
-  background: rgba(255, 255, 255, 0.8);
-  height: 12dvh;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #f9f9f9cc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #dddddd;
+}
 
-  h1 {
-    font-family: $font1;
+.leftPart {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  color: $lowBlack;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  line-height: 0;
+  
+  span svg {
+    fill: #888888;
+  }
+
+  a {
+    text-decoration: none;
     color: $black;
-    font-size: 2.8rem;
+  }
+
+  &:hover a {
     cursor: pointer;
   }
 }
 
+.rightPart {
+  display: flex;
+  align-items: center;
+}
+
 .nav-container {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  margin-top: 10px;
-  gap: 35px;
-  font-size: 1.3rem;
 
   a {
     text-decoration: none;
+    margin: 0 15px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #555;
+    transition: color 0.3s ease;
 
-    &.nav-active li {
-      position: relative;
-      padding-bottom: 5px;
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background-color: currentColor;
-        animation: slideIn 0.3s ease forwards;
-      }
+    &.nav-active {
+      color: #ff7043;
+      font-weight: bold;
     }
 
-    li {
-      font-family: $font2;
-      cursor: pointer;
-      color: rgba(0, 0, 0, 0.8);
-      text-transform: uppercase;
-      transition: color 0.2s ease-in-out;
+    &:hover {
+      color: $orange;
     }
+  }
 
-    &:hover li {
-      color: rgb(0, 0, 0);
-    }
+  li {
+    list-style: none;
   }
 
   span {
-    font-weight: bold;
-    font-size: 1.8rem;
+    color: #888888;
+    font-size: 1.5rem;
+    margin: 0 10px;
   }
-
-  input::placeholder {
-    color: $black;
-    font-size: 1.3rem;
-  }
-}
-
-.search {
-  width: 450px;
-  height: 35px;
-  min-width: 200px;
-
-  border-radius: 8px;
-  border: 2px solid rgba(0, 0, 0, 0.609);
-  padding: 5px 10px;
-  font-size: 1.3rem;
-
-  text-align: center;
-  transition: 0.3s ease-in-out;
-  padding: 10px;
-
-  background: transparent;
-  color: $black;
-}
-
-.search:focus {
-  width: 500px;
-  outline: none;
-  transition: 0.2s ease-in-out;
 }
 
 .search-container {
-  button {
-    position: relative;
-    right: 37px;
-    top: 8px;
-    border-radius: 10px;
-    border-left: 2px solid rgba(0, 0, 0, 0.611);
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .search {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #dddddd;
+    font-size: 1rem;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    transition: border 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #8BC34A;
+    }
+  }
+
+  .search-button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888888;
+    transition: color 0.3s ease;
+
+    svg {
+      fill: currentColor;
+    }
+
+    &:hover {
+      color: #ff7043;
+    }
   }
 }
-
-.search-button {
-  position: absolute;
-  background: transparent;
-  border: 0px;
-  cursor: pointer;
-}
-
-@keyframes slideIn {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+.logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
