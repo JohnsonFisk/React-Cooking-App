@@ -1,7 +1,37 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const [inputSearch, setInputSearch] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
+
+  function inputResult(e) {
+    const inputValue = e.target.value;
+    setInputSearch(inputValue);
+  }
+
+  function searchReult() {
+    const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
+  
+    if (!inputSearch || !apiKey) return;
+  
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://api.spoonacular.com/recipes/random?number=10&tags=${inputSearch}&apiKey=${apiKey}`);
+        const data = await response.json();
+        if (data && data.recipes) {
+          setSearchResults(data.recipes);
+          navigate('/recipe', { state: { results: data.recipes } });
+        }
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données :', error);
+      }
+    };
+  
+    fetchData();
+  }
+  
   return (
     <div className="header-container">
       <div className="leftPart">
@@ -24,6 +54,12 @@ const Header = () => {
             <li>Home</li>
           </NavLink>
           <NavLink
+            to="/recipe"
+            className={(nav) => (nav.isActive ? "nav-active" : "")}
+          >
+            <li>Explore</li>
+          </NavLink>
+          <NavLink
             to="/favories"
             className={(nav) => (nav.isActive ? "nav-active" : "")}
           >
@@ -42,8 +78,9 @@ const Header = () => {
               id="search"
               className="search"
               placeholder="Search for a recipe"
+              onChange={inputResult}
             />
-            <button type="submit" className="search-button">
+            <button type="submit" className="search-button" onClick={searchReult}>
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
                 <path fill="currentColor" d="m228.24 219.76l-51.38-51.38a86.15 86.15 0 1 0-8.48 8.48l51.38 51.38a6 6 0 0 0 8.48-8.48M38 112a74 74 0 1 1 74 74a74.09 74.09 0 0 1-74-74" />
               </svg>

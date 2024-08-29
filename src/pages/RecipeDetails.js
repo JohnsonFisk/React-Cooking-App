@@ -49,8 +49,8 @@ const RecipeDetails = () => {
                     <div className="recipe-info">
                         <h1>{recipe.title}</h1>
                         <ul>
-                            {recipe.extendedIngredients.map((ingredient) => (
-                                <li key={ingredient.id}>{ingredient.original}</li>
+                            {recipe.extendedIngredients.map((ingredient, index) => (
+                                <li key={`${ingredient.id}-${index}`}>{ingredient.original}</li>
                             ))}
                         </ul>
                     </div>
@@ -70,8 +70,8 @@ const RecipeDetails = () => {
                                         <div className="ingredients-list">
                                             <strong>Ingredients:</strong>
                                             <ul>
-                                                {step.ingredients.map((ingredient) => (
-                                                    <li key={ingredient.id}>{ingredient.name}</li>
+                                                {step.ingredients.map((ingredient, index) => (
+                                                    <li key={`${ingredient.id}-${index}`}>{ingredient.name}</li>
                                                 ))}
                                             </ul>
                                         </div>
