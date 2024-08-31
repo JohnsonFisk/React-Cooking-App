@@ -149,3 +149,26 @@
     }
   }
 }
+
+.coeur svg {
+  transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer;
+  fill: rgb(255, 255, 255);
+}
+
+.coeur .filled {
+  fill: red;
+}
+
+.coeur .animate {
+  animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+}

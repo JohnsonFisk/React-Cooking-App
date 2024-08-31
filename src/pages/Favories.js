@@ -7,17 +7,13 @@ const Favories = () => {
 
     // Fonction pour récupérer les favoris depuis localStorage ou API
     const fetchFavorites = useCallback(() => {
-        // Vérifier si les favoris sont déjà dans le cache (localStorage)
         const cachedFavorites = localStorage.getItem('favRecipe');
         if (cachedFavorites) {
             setFavorites(JSON.parse(cachedFavorites));
             return;
         }
 
-        // Si pas dans le cache, on récupère depuis l'API ou autre source
         const storedFavorites = JSON.parse(localStorage.getItem('favRecipe')) || [];
-        // Simuler une requête API si nécessaire (ici, c'est un exemple statique)
-        // Dans votre cas, vous pourriez faire un appel API pour récupérer les recettes
 
         // Mettre en cache les résultats dans localStorage
         localStorage.setItem('favRecipe', JSON.stringify(storedFavorites));
@@ -49,7 +45,11 @@ const Favories = () => {
                         />
                     ))
                 ) : (
-                    <p>Aucun favori pour le moment.</p>
+                    <p className='noFav'><span><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14">
+                    <path fill="none" stroke="#888888" strokeLinecap="round" strokeLinejoin="round" d="M2.5 13.5h9m1.93-10.1a2.49 2.49 0 0 0-4.09-1.26a2.49 2.49 0 0 0-4.68 0A2.49 2.49 0 0 0 .57 3.4A2.51 2.51 0 0 0 2.5 6.45V10a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V6.45a2.51 2.51 0 0 0 1.93-3.05ZM2.5 8.5h9" />
+                  </svg></span> No favorites yet. <span> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14">
+                    <path fill="none" stroke="#888888" strokeLinecap="round" strokeLinejoin="round" d="M2.5 13.5h9m1.93-10.1a2.49 2.49 0 0 0-4.09-1.26a2.49 2.49 0 0 0-4.68 0A2.49 2.49 0 0 0 .57 3.4A2.51 2.51 0 0 0 2.5 6.45V10a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V6.45a2.51 2.51 0 0 0 1.93-3.05ZM2.5 8.5h9" />
+                  </svg></span></p>
                 )}
             </div>
         </div>
