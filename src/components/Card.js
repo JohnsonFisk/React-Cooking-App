@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 
 const Card = ({ recipe, isFavorite, onRemove }) => {
     const [isFav, setIsFav] = useState(isFavorite);
-    const limitedDishTypes = recipe.dishTypes.slice(0, 3);
+    const navigate = useNavigate();
+
+    // Vérification que dishTypes existe et est un tableau avant d'utiliser slice
+    const limitedDishTypes = Array.isArray(recipe.dishTypes) ? recipe.dishTypes.slice(0, 3) : [];
     const scoreOutOfTen = (parseInt(recipe.spoonacularScore) / 10).toFixed(1);
     const defaultImage = '/assets/images/food-api.jpg';
-    const navigate = useNavigate();
 
     useEffect(() => {
         const favorites = JSON.parse(localStorage.getItem('favRecipe')) || [];
@@ -56,7 +58,7 @@ const Card = ({ recipe, isFavorite, onRemove }) => {
                 </div>
                 <h2>{recipe.title}</h2>
                 <div className="see-recipe-container">
-                    <button onClick={handleSeeRecipe}>See recipe</button>
+                    <button onClick={handleSeeRecipe}>Voir la recette</button>
                 </div>
                 <div className="footer-card-container">
                     <p className='score'>

@@ -8,7 +8,6 @@ const Home = () => {
 
   return (
     <div className="container">
-      <Header />
       <div className="homepage">
         <header className="hero-section">
           <h1>Welcome to Cooking App, your culinary companion!</h1>

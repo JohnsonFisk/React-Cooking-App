@@ -40,7 +40,6 @@ const RecipeDetails = () => {
 
     return (
         <div>
-            <Header />
             <div className="recipe-details">
                 <div className="recipe-header">
                     <div className="recipe-image">

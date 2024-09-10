@@ -101,6 +101,8 @@
       border-radius: 12px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
       color: $white;
+      z-index: 10; /* Assure que cette section est au-dessus de tout effet de flou */
+
     }
 
     button {
@@ -162,7 +164,6 @@
   }
 }
 
-
 .coeur .filled {
   fill: red;
 }
@@ -178,4 +179,8 @@
   50% {
       transform: scale(1.2);
   }
+}
+
+.search-title {
+  
 }

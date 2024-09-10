@@ -3,87 +3,54 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [inputSearch, setInputSearch] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
   const navigate = useNavigate();
 
   function inputResult(e) {
     const inputValue = e.target.value;
-    setInputSearch(inputValue);
+    setInputSearch(inputValue);  
   }
 
-  function searchReult() {
-    const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
-  
-    if (!inputSearch || !apiKey) return;
-  
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`https://api.spoonacular.com/recipes/random?number=10&tags=${inputSearch}&apiKey=${apiKey}`);
-        const data = await response.json();
-        if (data && data.recipes) {
-          setSearchResults(data.recipes);
-          navigate('/recipe', { state: { results: data.recipes } });
-        }
-      } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
-      }
-    };
-  
-    fetchData();
+
+  function searchResult() {
+    if (!inputSearch.trim()) {
+      navigate('/recipe', { state: { searchQuery: "" } });
+    } else {
+      navigate('/recipe', { state: { searchQuery: inputSearch.trim() } });
+    }
   }
-  
+
   return (
     <div className="header-container">
       <div className="leftPart">
         <NavLink to="/" className="logo-link">
-          <span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14">
-              <path fill="none" stroke="#888888" strokeLinecap="round" strokeLinejoin="round" d="M2.5 13.5h9m1.93-10.1a2.49 2.49 0 0 0-4.09-1.26a2.49 2.49 0 0 0-4.68 0A2.49 2.49 0 0 0 .57 3.4A2.51 2.51 0 0 0 2.5 6.45V10a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V6.45a2.51 2.51 0 0 0 1.93-3.05ZM2.5 8.5h9" />
-            </svg>
-          </span>
           <h1>Cooking App</h1>
         </NavLink>
       </div>
 
       <nav className="rightPart">
         <div className="nav-container">
-          <NavLink
-            to="/"
-            className={(nav) => (nav.isActive ? "nav-active" : "")}
-          >
-            <li>Home</li>
+          <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
+            <li>Accueil</li>
           </NavLink>
-          <NavLink
-            to="/recipe"
-            className={(nav) => (nav.isActive ? "nav-active" : "")}
-          >
-            <li>Explore</li>
+          <NavLink to="/recipe" className={(nav) => (nav.isActive ? "nav-active" : "")}>
+            <li>Explorer</li>
           </NavLink>
-          <NavLink
-            to="/favories"
-            className={(nav) => (nav.isActive ? "nav-active" : "")}
-          >
-            <li>Favorite recipe</li>
+          <NavLink to="/favories" className={(nav) => (nav.isActive ? "nav-active" : "")}>
+            <li>Favoris</li>
           </NavLink>
-          <NavLink
-            to="/contact"
-            className={(nav) => (nav.isActive ? "nav-active" : "")}
-          >
-            <li>Contact us</li>
+          <NavLink to="/contact" className={(nav) => (nav.isActive ? "nav-active" : "")}>
+            <li>Contact</li>
           </NavLink>
-          <span>|</span>
           <div className="search-container">
             <input
               type="text"
               id="search"
               className="search"
-              placeholder="Search for a recipe"
+              placeholder="Rechercher une recette"
               onChange={inputResult}
             />
-            <button type="submit" className="search-button" onClick={searchReult}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
-                <path fill="currentColor" d="m228.24 219.76l-51.38-51.38a86.15 86.15 0 1 0-8.48 8.48l51.38 51.38a6 6 0 0 0 8.48-8.48M38 112a74 74 0 1 1 74 74a74.09 74.09 0 0 1-74-74" />
-              </svg>
+            <button type="submit" className="search-button" onClick={searchResult}>
+              Rechercher
             </button>
           </div>
         </div>

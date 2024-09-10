@@ -7,7 +7,6 @@ const Contact = () => {
 
   return (
     <div className="form">
-      <Header />
 
       <div className="notification-container" id="notification">
         <div className="notifiction-header">

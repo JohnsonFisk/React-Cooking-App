@@ -5,7 +5,6 @@ import Card from '../components/Card';
 const Favories = () => {
     const [favorites, setFavorites] = useState([]);
 
-    // Fonction pour récupérer les favoris depuis localStorage ou API
     const fetchFavorites = useCallback(() => {
         const cachedFavorites = localStorage.getItem('favRecipe');
         if (cachedFavorites) {
@@ -15,7 +14,6 @@ const Favories = () => {
 
         const storedFavorites = JSON.parse(localStorage.getItem('favRecipe')) || [];
 
-        // Mettre en cache les résultats dans localStorage
         localStorage.setItem('favRecipe', JSON.stringify(storedFavorites));
         setFavorites(storedFavorites);
     }, []);
@@ -32,7 +30,6 @@ const Favories = () => {
 
     return (
         <div>
-            <Header />
             <h1 className='fav-title'>Find your favorite recipes here :</h1>
             <div className="favorites-container">
                 {favorites.length > 0 ? (
