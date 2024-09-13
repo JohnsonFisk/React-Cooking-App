@@ -167,6 +167,111 @@ body {
   gap: 15px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .recipe-card {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 45%;
+            flex: 1 0 45%;
+    min-width: 250px;
+    margin-bottom: 20px;
+  }
+  .info {
+    width: 300px;
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header-container {
+    padding: 10px 20px;
+  }
+  .leftPart h1 {
+    font-size: 1.2rem;
+  }
+  .leftPart svg {
+    width: 24px;
+    height: 24px;
+  }
+  .rightPart .nav-container a {
+    margin: 0 10px;
+    font-size: 1.2rem;
+  }
+  .rightPart .search-container .search {
+    width: 180px;
+    padding: 6px 10px;
+  }
+  .rightPart .search-container .search-button {
+    right: 5px;
+  }
+  .rightPart .search-container .search-button svg {
+    width: 24px;
+    height: 24px;
+  }
+  .recipe-card {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+  .info {
+    width: 280px;
+    height: 180px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .header-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 10px;
+  }
+  .leftPart h1 {
+    font-size: 1.1rem;
+  }
+  .leftPart svg {
+    width: 20px;
+    height: 20px;
+  }
+  .rightPart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .rightPart .nav-container a {
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
+  .rightPart .search-container .search {
+    width: 100%;
+    padding: 8px;
+  }
+  .rightPart .search-container .search-button {
+    position: static;
+    margin-top: 10px;
+  }
+  .rightPart .search-container .search-button svg {
+    width: 24px;
+    height: 24px;
+  }
+  .recipe-card {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
+    min-width: 100%;
+  }
+  .info {
+    width: 250px;
+    height: 160px;
+  }
+}
 .recipe-container {
   width: 95%;
   margin: 0 auto;
