@@ -101,7 +101,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: #888888;
+    color: $orange;
     transition: color 0.3s ease;
 
     svg {
@@ -109,7 +109,7 @@
     }
 
     &:hover {
-      color: #ff7043;
+      color: #ff5c2b;
     }
   }
 }

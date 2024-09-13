@@ -35,14 +35,12 @@ const Recipe = () => {
 
   useEffect(() => {
     if (searchQuery.trim() === "") {
-      setRecipes([]);
-      setSelectedCategory(""); 
-    } else if (searchQuery && searchQuery.trim() !== "") {
-      fetchRecipes("", page, searchQuery);
-    } else {
       fetchRecipes(selectedCategory, page);
+    } else {
+      fetchRecipes("", page, searchQuery);
     }
   }, [selectedCategory, page, searchQuery, fetchRecipes]);
+  
   
 
   const filteredRecipes = selectedCategory
@@ -63,12 +61,12 @@ const Recipe = () => {
             <li onClick={() => setSelectedCategory(selectedCategory === "beverage" ? "" : "beverage")} className={selectedCategory === "beverage" ? "active" : ""}>Beverage</li>
           </div>
         )}
-        <h1>{searchQuery ? `Résultats de recherche pour : ${searchQuery}` : ""}</h1> {/* Titre conditionnel */}
+        <h1 className="search-title">{searchQuery ? `Résultats de recherche pour ${searchQuery} :` : ""}</h1> {/* Titre conditionnel */}
         {filteredRecipes.map((recipe, index) => (
-          <div className="recipe-card" key={`${recipe.id}-${index}`}>
-            <Card recipe={recipe} />
-          </div>
-        ))}
+        <div className="recipe-card" key={`${recipe.id}-${index}`}>
+          <Card recipe={recipe} />
+        </div>
+))}
         <div className="more-container">
           <button id="more" onClick={() => setPage((prevPage) => prevPage + 1)}>
             Voir plus
