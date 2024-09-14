@@ -46,7 +46,7 @@ const RecipeDetails = () => {
                         <img src={recipe.image} alt={recipe.title} />
                     </div>
                     <div className="recipe-info">
-                        <h1>{recipe.title}</h1>
+                        <h1>{recipe.title} <span className='recipe-info-details'>({recipe.readyInMinutes} min)</span></h1>
                         <ul>
                             {recipe.extendedIngredients.map((ingredient, index) => (
                                 <li key={`${ingredient.id}-${index}`}>{ingredient.original}</li>

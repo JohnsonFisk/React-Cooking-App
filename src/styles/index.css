@@ -1152,6 +1152,10 @@ textarea:invalid {
   width: 1em;
   margin-left: -1em;
 }
+.recipe-details .recipe-info-details {
+  font-size: 1.5rem;
+  color: rgba(85, 85, 85, 0.7137254902);
+}
 .recipe-details .recipe-instructions h3 {
   font-size: 2rem;
   color: #333;

@@ -3,13 +3,17 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [inputSearch, setInputSearch] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   function inputResult(e) {
     const inputValue = e.target.value;
     setInputSearch(inputValue);  
   }
-
 
   function searchResult() {
     if (!inputSearch.trim()) {
@@ -30,7 +34,13 @@ const Header = () => {
         </NavLink>
       </div>
 
-      <nav className="rightPart">
+      <div className={`burger-menu ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
+        <div className="burger-bar"></div>
+        <div className="burger-bar"></div>
+        <div className="burger-bar"></div>
+      </div>
+
+      <nav className={`rightPart ${menuOpen ? "open" : ""}`}>
         <div className="nav-container">
           <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
             <li>Accueil</li>
